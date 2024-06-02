@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-307(%3j+y6w%+$$^s6%qggg&n9*wq06-z@^tovz!tz74omd#sm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','regcashpower.bwenge.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -36,10 +36,18 @@ INSTALLED_APPS = [
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+
 CORS_ORIGIN_WHITELIST = [
     'http://localhost',
     'http://127.0.0.1',
 ]
+# settings.py
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:51351',
+    # Add other trusted origins here
+]
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -133,16 +141,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Directory where Django will look for additional static files, aside from each app's 'static' directory
 STATICFILES_DIRS = (
-   os.path.join(BASE_DIR, 'assets'),  # Change this to a different folder from STATIC_ROOT
-#   os.path.join(BASE_DIR, 'static'),
+#    os.path.join(BASE_DIR, 'assets'),  # Change this to a different folder from STATIC_ROOT
+   os.path.join(BASE_DIR, 'static'),
 )
 
 # URL to use when referring to static files located in STATIC_ROOT
 STATIC_URL = '/static/'
 
 # Directory where the static files will be collected to
-STATIC_ROOT = '/var/www/cashpower/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Good for production
+# STATIC_ROOT = '/var/www/cashpower/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Good for production
 
 # Media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
