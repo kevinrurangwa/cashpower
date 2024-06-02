@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-307(%3j+y6w%+$$^s6%qggg&n9*wq06-z@^tovz!tz74omd#sm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['regcashpower.bwenge.com']
+ALLOWED_HOSTS = ['127.0.0.1','regcashpower.bwenge.com']
 
 
 # Application definition
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'cashpower.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'database/db.sqlite3',
     }
 }
 
